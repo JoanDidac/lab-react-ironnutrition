@@ -1,11 +1,13 @@
 import React from 'react';
 import { Card, Button , Col} from 'antd';
+import AddFoodForm from './AddFoodForm';
 
 
+const FoodBox = ({ food, onAddFood }) => { const handleAddFood = () => { onAddFood(food); };
 
 
-function FoodBox(props) {
-  const { food } = props;
+// function FoodBox(props) {
+//   const { food } = props;
 
   return (
     <Col>
@@ -23,5 +25,6 @@ function FoodBox(props) {
     </Col>
   );
 }
+
 
 export default FoodBox;
