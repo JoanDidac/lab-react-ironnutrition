@@ -4,6 +4,7 @@ import { Input, Button, Form } from "antd";
 
 
 
+
 const AddFoodForm = ({ onAddFood }) => {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
@@ -19,13 +20,13 @@ const AddFoodForm = ({ onAddFood }) => {
     setImage("");
     setCalories("");
     setServings("");
-    console.log(food);
+    console.log();
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} className='add-food-form'>
       <Form.Item>
-        <Input
+        <Input className="form-input"
           type="text"
           placeholder="Name"
           value={name}
@@ -57,7 +58,7 @@ const AddFoodForm = ({ onAddFood }) => {
         />
       </Form.Item>
       <Form.Item>
-        <Button onAddFood={handleAddFood} food={food}type="primary" htmlType="submit">Add Food</Button>
+        <Button className="form-button" type="primary" htmlType="submit">Add Food</Button>
       </Form.Item>
     </Form>
   );
