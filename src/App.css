@@ -27,7 +27,7 @@ h1 {
 
   span {
     margin-top: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
   }
 
 
@@ -56,22 +56,30 @@ input {
 
 
 /* Styling for the food list container */
+
 .food-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 30px;
+  margin: 0 auto;
+  max-width: 1200px;
+  
 }
 
 /* Styling for each food item */
 .food-item {
-  width: 350px;
-  margin: 30px;
+  width: 380px;
+  flex: 0 0 calc((100% - 40px) / 3);
+  margin: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  
+  
 }
+
 
 /* Styling for the food item image */
 .food-item img {
@@ -86,10 +94,6 @@ input {
   padding: 20px;
 }
 
-.title {
-
-}
-
 /* Styling for the food item title */
 .food-item-title {
   color : rgb(233, 255, 109);
@@ -97,6 +101,7 @@ input {
   font-size: 44px;
   font-weight: bold;
   margin-bottom: 10px;
+ 
 }
 
 /* Styling for the food item description */
@@ -138,6 +143,34 @@ input {
 
 /* Styling for the food item button active effect */
 .food-item-button:active {
+  transform: scale(0.95);
+}
+
+.form-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align:justify;
+  background-color: #ff8484;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(240, 251, 176);
+  border: none;
+  border-radius: 5px;
+  font-size: 19px;
+  padding: 20px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10vw;
+
+}
+.form-button:hover {
+  background-color: #ff4d4d;
+}
+
+/* Styling for the food item button active effect */
+.form-button:active {
   transform: scale(0.95);
 }
 

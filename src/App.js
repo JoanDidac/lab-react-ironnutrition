@@ -10,35 +10,27 @@ function App() {
   const [foodList, setFoodList] = useState(foods);
 
   const handleAddFood = (newFood) => {
+    console.log(newFood);
     setFoodList([...foodList,newFood]);
   }
 
+  const handleDeleteFood = (foodToDelete) => {
+    const newFoodList = foodList.filter((food) => food.name !== foodToDelete.name);
+    setFoodList(newFoodList);
+  }
   return (
     <div className="App">
       <div className="ant-row">
         <h1 className="title">Iron Nutrition</h1>
       </div>
       <Divider className="divider" orientation="center">Add new food</Divider>
-      <AddFoodForm className="add-food-form" onAddFood={handleAddFood} />
+      <AddFoodForm handleAddFood={handleAddFood} />
       <Divider className="divider" orientation="center">Food list</Divider>
       <div className="food-list">
         <Row gutter={[16, 16]}>
           {foodList.map((food,index) => (
             <Col span={8} key={index}>
-              <div className="food-item">
-                <img src={food.image} alt={food.name} className="food-item-img" />
-                <div className="food-item-content">
-                  <h2 className="food-item-title">{food.name}</h2>
-                  <p className="food-item-description"><strong>Calories:</strong> {food.calories}</p>
-                  <p className="food-item-description"><strong>Servings:</strong> {food.servings}</p>
-                  <p className="food-item-description"><strong>Description:</strong> {food.description}</p>
-                  <div className="food-item-actions">
-          
-                    <button className="food-item-button">Add</button>
-                    <button className="food-item-button">Delete</button>
-                  </div>
-                </div>
-              </div>
+              <FoodBox key={index} food={food}  onDeleteFood={handleDeleteFood}/>
             </Col>
           ))}
         </Row>
